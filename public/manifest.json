@@ -1,0 +1,45 @@
+{
+  "name": "SnaFeechicks - Café & Grill",
+  "short_name": "SnaFeechicks",
+  "description": "Fresh grilled food, kebabs, and more! Order on WhatsApp or visit us.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["food", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Order on WhatsApp",
+      "url": "https://wa.me/+913335537458",
+      "description": "Quick order via WhatsApp"
+    }
+  ]
+}
