@@ -4,6 +4,20 @@ const glob = require('glob');
 const exts = ['.ts', '.tsx', '.js', '.jsx'];
 const files = glob.sync('src/**/*.{ts,tsx,js,jsx}');
 let missing = [];
+
+// Vercel debug: when running on Vercel, print what files exist under src/components/ui
+if (process.env.VERCEL) {
+  try {
+    const uiDir = path.resolve(process.cwd(), 'src/components/ui');
+    const uiFiles = fs.existsSync(uiDir) ? fs.readdirSync(uiDir) : [];
+    console.log('VERCEL DEBUG: src/components/ui files ->', uiFiles);
+    console.log('VERCEL DEBUG: toaster present ->', uiFiles.includes('toaster.tsx') || uiFiles.includes('toaster.ts'));
+    console.log('VERCEL DEBUG: node.version ->', process.version, 'platform ->', process.platform);
+  } catch (err) {
+    console.log('VERCEL DEBUG: error reading src/components/ui ->', err && err.message);
+  }
+}
+
 files.forEach(f => {
   const src = fs.readFileSync(f, 'utf8');
   const re = /import\s+[^'\"]+['\"]([^'\"]+)['\"]/g;
